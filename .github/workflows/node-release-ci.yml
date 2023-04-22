@@ -1,0 +1,37 @@
+name: Node Release CI
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build_and_test:
+    name: Node Build & Test
+    uses: ./.github/workflows/lib-node.yml
+    permissions:
+      actions: read
+      id-token: write
+      contents: write
+    with:
+      node-version: 18
+      artifact-name: build
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      id-token: write
+      contents: write
+    needs: [build_and_test]
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: build
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            *
+          generate_release_notes: true

@@ -1,0 +1,14 @@
+{
+  "error_no_open_documents": {
+    "en": "There are no open documents.",
+    "ru": "Нет открытых документов."
+  },
+  "error_empty_document": {
+    "en": "The document is empty.",
+    "ru": "Документ пуст."
+  },
+  "error_found_non_editable_paths": {
+    "en": "Unable to select some hidden or locked paths",
+    "ru": "Невозможно выделить некоторые скрытые или заблокированные контуры."
+  }
+}

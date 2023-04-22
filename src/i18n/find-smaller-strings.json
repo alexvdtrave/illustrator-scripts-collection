@@ -1,0 +1,10 @@
+{
+  "error_single_path_selected": {
+    "en": "There should be only single path selected.",
+    "ru": "Должен быть выбран только один контур."
+  },
+  "dialog_progress_title": {
+    "en": "Searching paths...",
+    "ru": "Поиск контуров..."
+  }
+}

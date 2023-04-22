@@ -1,0 +1,21 @@
+name: PR reviewer
+
+on: pull_request_target
+
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  build_and_test:
+    name: Node Build & Test
+    uses: ./.github/workflows/lib-node.yml
+    permissions:
+      actions: read
+      id-token: write
+      contents: write
+    with:
+      node-version: 18
+  pr-review:
+    needs: [build_and_test]
+    uses: ./.github/workflows/lib-pr-review.yml

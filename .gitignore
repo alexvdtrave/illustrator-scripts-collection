@@ -1,3 +1,6 @@
+# Ignore directory with compiled scripts
+/build/
+
 # Logs
 logs
 *.log

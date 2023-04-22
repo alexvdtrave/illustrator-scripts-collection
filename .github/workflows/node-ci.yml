@@ -1,0 +1,17 @@
+name: Node CI
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build_and_test:
+    name: Node Build & Test
+    uses: ./.github/workflows/lib-node.yml
+    permissions:
+      actions: read
+      id-token: write
+      contents: write
+    with:
+      node-version: 18
+      artifact-name: build

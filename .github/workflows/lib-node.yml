@@ -1,0 +1,49 @@
+name: Node Build & Test
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        required: true
+        type: string
+      artifact-name:
+        required: false
+        type: string
+        default: ''
+
+jobs:
+  build_and_test:
+    name: Package Node ${{ inputs.node-version }}
+    runs-on: ubuntu-latest
+
+    permissions:
+      actions: read
+      id-token: write
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ inputs.node-version }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run lint checks
+        run: npm run lint
+
+      - name: Run tests
+        run: npm test
+        
+      - name: Build scripts
+        run: npm run build
+
+      - name: Upload a Build Artifact
+        if: ${{ inputs.artifact-name != '' }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ inputs.artifact-name }}
+          path: ./build/
+          retention-days: 30

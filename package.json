@@ -1,0 +1,45 @@
+{
+  "name": "illustrator-stock-scripts",
+  "version": "1.0.0",
+  "description": "A collection of scripts for Adobe Illustrator",
+  "author": "alexvdtrave",
+  "homepage": "https://github.com/alexvdtrave/illustrator-scripts-collection",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexvdtrave/illustrator-scripts-collection.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alexvdtrave/illustrator-scripts-collection/issues"
+  },
+  "keywords": [
+    "illustrator"
+  ],
+  "scripts": {
+    "build": "rollup --config rollup.config.mjs",
+    "lint": "./node_modules/.bin/eslint src/**.js",
+    "test": "./node_modules/.bin/mocha --globals app,alert --require @babel/register",
+    "copy": "cp dist/*.jsx /Applications/Adobe\\ Illustrator\\ 2020/Presets.localized/en_US/Scripts"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@ampproject/rollup-plugin-closure-compiler": "^0.27.0",
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@babel/register": "^7.21.0",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "chai": "^4.3.7",
+    "eslint": "^8.39.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.27.5",
+    "mocha": "^10.2.0",
+    "rollup": "^3.20.7",
+    "sinon": "^15.0.4"
+  },
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": ">=18.0.0"
+  }
+}
