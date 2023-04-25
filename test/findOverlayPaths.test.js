@@ -1,27 +1,26 @@
-const sinon = require('sinon');
 const { reload } = require('./test-utils');
 
 describe('Find Overlay Paths', () => {
 
-  const appBase = { redraw: () => { } };
-  global.app = sinon.mock(appBase);
-  const redrawMock = global.app.expects('redraw');
+  const mocks = {
+    app: {
+      redraw: jest.fn()
+    },
+    alert: jest.fn(),
+    localize: jest.fn().mockReturnValue('msg1')
+  };
+
+  Object.assign(global, mocks);
 
   beforeEach(() => {
-    global.alert = sinon.mock();
+    jest.resetAllMocks();
   });
 
-  afterEach(() => {
-    global.alert.verify();
-  })
-
   it('checks whether a document is open', () => {
-    global.localize = sinon.stub().returns('msg1');
-
     reload('../src/FindOverlayPaths');
 
-    global.alert.withExactArgs().once();
-    redrawMock.never();
+    expect(global.alert).toBeCalledTimes(1);
+    expect(global.app.redraw).not.toBeCalled();
   });
 
 });
