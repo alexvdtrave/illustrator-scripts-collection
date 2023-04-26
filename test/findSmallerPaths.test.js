@@ -23,4 +23,8 @@ describe('Find Smaller Paths', () => {
     expect(global.app.redraw).not.toBeCalled();
   });
 
+  it('checks whether a document is open', () => {
+    expect(global.alert).toBeCalledTimes(12);
+  });
+
 });
