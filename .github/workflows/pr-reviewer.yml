@@ -1,6 +1,8 @@
 name: PR reviewer
 
-on: pull_request_target
+on:
+  pull_request:
+    branches: [main]
 
 permissions:
   pull-requests: write
