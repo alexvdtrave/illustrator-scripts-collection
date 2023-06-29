@@ -1,6 +1,6 @@
 {
   "name": "illustrator-stock-scripts",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A collection of scripts for Adobe Illustrator",
   "author": "alexvdtrave",
   "homepage": "https://github.com/alexvdtrave/illustrator-scripts-collection",
@@ -23,21 +23,20 @@
   "license": "MIT",
   "devDependencies": {
     "@ampproject/rollup-plugin-closure-compiler": "^0.27.0",
-    "@babel/core": "^7.22.1",
-    "@babel/preset-env": "^7.22.4",
-    "@babel/register": "^7.21.0",
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "@babel/register": "^7.22.5",
     "@rollup/plugin-babel": "^6.0.3",
-    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-commonjs": "^25.0.2",
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.1.0",
-    "eslint": "^8.41.0",
+    "eslint": "^8.43.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-import": "^2.27.5",
     "jest": "^29.5.0",
-    "rollup": "^3.23.0"
+    "rollup": "^3.25.3"
   },
   "engines": {
-    "npm": ">=8.0.0",
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   }
 }

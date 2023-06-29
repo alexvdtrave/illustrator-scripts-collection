@@ -13,5 +13,5 @@ jobs:
       id-token: write
       contents: write
     with:
-      node-version: 18
+      node-version: 20
       artifact-name: build
