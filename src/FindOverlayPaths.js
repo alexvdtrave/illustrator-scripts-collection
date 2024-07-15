@@ -1,5 +1,3 @@
-/* eslint-disable guard-for-in */
-/* eslint-disable require-jsdoc */
 import {
   isEmptyArray, hasActiveDocument, chunkLoop,
 } from './common/utils';
