@@ -32,5 +32,6 @@ jobs:
       - name: Release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
         run: |
-          gh release create "$GITHUB_REF_NAME" * --generate-notes
+          gh release create "$GITHUB_REF_NAME" *.jsx --generate-notes
