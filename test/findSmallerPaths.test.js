@@ -1,26 +1,30 @@
+const { describe, it, beforeEach, mock } = require('node:test');
+const assert = require('node:assert/strict');
 const { reload } = require('./test-utils');
 
 describe('Find Smaller Paths', () => {
 
   const mocks = {
     app: {
-      redraw: jest.fn()
+      redraw: mock.fn()
     },
-    alert: jest.fn(),
-    localize: jest.fn().mockReturnValue('msg1')
+    alert: mock.fn(),
+    localize: mock.fn(() => 'msg1')
   };
 
   Object.assign(global, mocks);
 
   beforeEach(() => {
-    jest.resetAllMocks();
+    mocks.app.redraw.mock.resetCalls();
+    mocks.alert.mock.resetCalls();
+    mocks.localize.mock.resetCalls();
   });
 
   it('checks whether a document is open', () => {
     reload('../src/FindSmallerPaths');
 
-    expect(global.alert).toBeCalledTimes(1);
-    expect(global.app.redraw).not.toBeCalled();
+    assert.equal(global.alert.mock.callCount(), 1);
+    assert.equal(global.app.redraw.mock.callCount(), 0);
   });
 
 });
