@@ -17,4 +17,4 @@ jobs:
       id-token: write
       contents: write
     with:
-      node-version: 20
+      node-version: 26

@@ -17,7 +17,7 @@
   "scripts": {
     "build": "rollup --config rollup.config.mjs",
     "lint": "eslint \"src/**/*.js\" --fix",
-    "test": "node -r @babel/register --test \"test/**/*.test.js\"",
+    "test": "node -r @babel/register --test test/*.test.js",
     "copy": "cp dist/*.jsx /Applications/Adobe\\ Illustrator\\ 2020/Presets.localized/en_US/Scripts"
   },
   "license": "MIT",
@@ -35,6 +35,6 @@
     "rollup": "^4.65.1"
   },
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=26.0.0"
   }
 }
