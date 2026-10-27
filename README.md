@@ -1,5 +1,8 @@
 # illustrator-scripts-collection
 
+[![Node CI](https://github.com/alexvdtrave/illustrator-scripts-collection/actions/workflows/node-ci.yml/badge.svg)](https://github.com/alexvdtrave/illustrator-scripts-collection/actions/workflows/node-ci.yml)
+[![CodeQL](https://github.com/alexvdtrave/illustrator-scripts-collection/workflows/CodeQL/badge.svg)](https://github.com/alexvdtrave/illustrator-scripts-collection/actions?query=workflow%3ACodeQL)
+
 This project is a collection of scripts for Adobe Illustrator that are focused on common tasks that typically need to be done to prepare an illustration for a stock submission.
 
 ## Getting Started
