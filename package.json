@@ -32,7 +32,7 @@
     "@rollup/plugin-node-resolve": "^16.0.3",
     "eslint": "^10.13.0",
     "globals": "^17.13.0",
-    "rollup": "^4.66.0"
+    "rollup": "^4.67.2"
   },
   "engines": {
     "node": ">=26.0.0"
